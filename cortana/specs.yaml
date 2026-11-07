@@ -1,0 +1,54 @@
+cortana:
+  name: cortana-srv
+  function: "general-infrastructure-server (Unified Threat Management)"
+  acronym: "GIS (UTM)"
+  zone: local
+  
+hardware:
+  cpu: 
+    model: i3 390M
+    cores: 2
+    threads: 4
+    tdp: "35W"
+    base-frequency: "2.6Hz"
+    max-frequency: "2.6Hz"
+  gpu:
+    model: "intel UHD Graphics"
+    base-frequency: "500 MHz"
+    max-frequency: "667 MHz"
+  RAM:
+    total: "8GB"
+    type: "DDR3"
+  storage:
+    - disk: "SSD SATA"
+      total: "220GB"
+      partition: "/ (system)"
+  ports:
+    - usb: 
+      has_usb: true
+      quant: 3
+    - hdmi: 
+      has_hdmi: true
+      quant: 1  
+    - ethernet: 
+      has_ethernet: true
+      quant: 1
+      capacity: "1GB/s"
+    - sd_card: 
+      has_sd_card: true
+      quant: 1
+
+operating-system:
+  distro: ubuntu
+  version: "24.04 LTS"
+  arquitecture: "x86_64"
+  kernel: "6.8.0-generic"
+
+network:
+  local_ip: 192.168.1.216
+  tailscale_ip: 100.117.171.20
+  main_interface: "eth0"
+  open_ports:
+    - 22
+    - 80
+    - 443

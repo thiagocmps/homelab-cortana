@@ -1,0 +1,54 @@
+rodney:
+  name: rodney-srv
+  function: central-aplication-server 
+  acronym: CAS
+  zone: local
+  
+hardware:
+  cpu: 
+    model: "i5-8260U"
+    cores: 4
+    threads: 8 
+    tdp: "15W"
+    base_frequency: "1.6GHz"
+    max_frequency: "3.90GHz"
+  GPU: 
+    model: "UHD Graphics 620"
+  RAM:
+    total: "16GB"
+    type: "DDR4"
+  storage:
+    - disk: "SSD SATA"
+      total: "220GB"
+      partition: 
+        - "/ (system)"
+        - "/home"
+  ports:
+    - usb: 
+      has_usb: true
+      quant: 2
+    - hdmi: 
+      has_hdmi: true
+      quant: 1  
+    - ethernet: 
+      has_ethernet: true
+      quant: 1
+      capacity: "1Gbps"
+    - sd_card: 
+      has_sd_card: true
+      quant: 1
+
+operating-system:
+  distro: debian 
+  version: "13 Trixie"
+  arquitecture: "x86_64"
+  kernel: "6.8.0-generic"
+
+network:
+  local_ip: 192.168.1.198
+  tailscale_ip: 100.88.74.92
+  main_interface: "wl0"
+  open_ports:
+    - 22 
+    - 80
+    - 443

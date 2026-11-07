@@ -51,5 +51,5 @@ And Rodney? The Application and database server, the client never requests direc
 
 I designed a diagram to represent the network hierarchy and infrastructure.
 
-![Network Diagram](assets/cortana/infrastructure.png)
+![Network Diagram](assets/infrastructure.png)
 _It is in Portuguese, but i think the figures make it more understandable_

@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mxfile host="Electron">
+  <diagram name="Fluxo 4 - Syncthing atual e alvo" id="Fluxo-4---Syncthing-atual-e-alvo">
+    <mxGraphModel dx="900" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="550" math="0" shadow="0" adaptiveColors="auto">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Fluxo 4 — Syncthing: atual × alvo" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=20;fontStyle=1;fontFamily=Garamond;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="1020" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="atual" value="Atual" style="swimlane;startSize=30;html=1;whiteSpace=wrap;fontSize=16;fontStyle=1;fontFamily=Garamond;fillColor=#F5F5F5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="450" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="c1" value="Cliente tailnet" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=14;fontFamily=Garamond;" vertex="1" parent="atual">
+          <mxGeometry x="30" y="70" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="r1" value="Syncthing no RODNEY" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=14;fontFamily=Garamond;" vertex="1" parent="atual">
+          <mxGeometry x="270" y="70" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="IP Tailscale do RODNEY" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;fontFamily=Garamond;labelBackgroundColor=default;strokeColor=#666666;" edge="1" parent="atual" source="c1" target="r1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="alvo" value="Alvo" style="swimlane;startSize=30;html=1;whiteSpace=wrap;fontSize=16;fontStyle=1;fontFamily=Garamond;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="1">
+          <mxGeometry x="540" y="80" width="500" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="c2" value="Cliente tailnet" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=14;fontFamily=Garamond;" vertex="1" parent="alvo">
+          <mxGeometry x="30" y="70" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n2" value="NPM na CORTANA" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;fontSize=14;fontFamily=Garamond;" vertex="1" parent="alvo">
+          <mxGeometry x="210" y="70" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="r2" value="Syncthing no RODNEY" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=14;fontFamily=Garamond;" vertex="1" parent="alvo">
+          <mxGeometry x="210" y="180" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="HTTPS/tailnet" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;fontFamily=Garamond;labelBackgroundColor=default;strokeColor=#666666;" edge="1" parent="alvo" source="c2" target="n2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="Stream TCP 22000" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;fontFamily=Garamond;labelBackgroundColor=default;strokeColor=#666666;" edge="1" parent="alvo" source="n2" target="r2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="note" value="O NPM HTTP publica a interface web, mas não transporta o protocolo de sincronização. Para o alvo, usar Stream TCP 22000 e verificar UDP/QUIC." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;fontFamily=Garamond;" vertex="1" parent="1">
+          <mxGeometry x="40" y="400" width="1020" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

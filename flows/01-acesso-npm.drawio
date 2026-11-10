@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mxfile host="Electron">
+  <diagram name="Fluxo 1 - Acesso externo ao NPM" id="Fluxo-1---Acesso-externo-ao-NPM">
+    <mxGraphModel dx="900" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="600" math="0" shadow="0" adaptiveColors="auto">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Fluxo 1 — Acesso externo ao NPM (alvo)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=20;fontStyle=1;fontFamily=Garamond;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="1020" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c" value="Cliente na tailnet" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=14;fontFamily=Garamond;" vertex="1" parent="1">
+          <mxGeometry x="40" y="140" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="t" value="Tailscale (overlay)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=14;fontFamily=Garamond;" vertex="1" parent="1">
+          <mxGeometry x="230" y="140" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="h" value="CORTANA&lt;br&gt;tailscale0" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=14;fontFamily=Garamond;" vertex="1" parent="1">
+          <mxGeometry x="420" y="140" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="u" value="UFW&lt;br&gt;INPUT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;fontSize=14;fontFamily=Garamond;" vertex="1" parent="1">
+          <mxGeometry x="610" y="140" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n" value="NPM" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=14;fontFamily=Garamond;" vertex="1" parent="1">
+          <mxGeometry x="800" y="140" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s" value="Serviço no RODNEY" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=14;fontFamily=Garamond;" vertex="1" parent="1">
+          <mxGeometry x="800" y="300" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="i" value="Internet" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;fontSize=14;fontFamily=Garamond;" vertex="1" parent="1">
+          <mxGeometry x="420" y="300" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="HTTPS via tailnet" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;fontFamily=Garamond;labelBackgroundColor=default;strokeColor=#666666;" edge="1" parent="1" source="c" target="t">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="WireGuard" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;fontFamily=Garamond;labelBackgroundColor=default;strokeColor=#666666;" edge="1" parent="1" source="t" target="h">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="chegada" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;fontFamily=Garamond;labelBackgroundColor=default;strokeColor=#666666;" edge="1" parent="1" source="h" target="u">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="443/80 se permitido" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;fontFamily=Garamond;labelBackgroundColor=default;strokeColor=#666666;" edge="1" parent="1" source="u" target="n">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="HTTP/HTTPS na LAN" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;fontFamily=Garamond;labelBackgroundColor=default;strokeColor=#666666;" edge="1" parent="1" source="n" target="s">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="nenhuma porta aberta" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;fontFamily=Garamond;labelBackgroundColor=default;strokeColor=#666666;strokeColor=#B20000;dashed=1;" edge="1" parent="1" source="i" target="h">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="note" value="Conceitual: confirmar as regras efetivas do UFW e do Tailscale antes de assumir que a entrada é bloqueada ou permitida." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;fontFamily=Garamond;" vertex="1" parent="1">
+          <mxGeometry x="40" y="430" width="1020" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
